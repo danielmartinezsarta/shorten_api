@@ -39,8 +39,10 @@ defmodule ShortenApi.MixProject do
       {:ecto_sql, "~> 3.1"},
       {:postgrex, ">= 0.0.0"},
       {:gettext, "~> 0.11"},
+      {:cowboy, "~> 2.6"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:ecto_mnesia, "~> 0.9.1"}
     ]
   end
 
