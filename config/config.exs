@@ -10,17 +10,6 @@ use Mix.Config
 config :shorten_api,
   ecto_repos: [ShortenApi.Repo]
 
-# Configure your database
-config :shorten_api, ShortenApi.Repo,
-  adapter: EctoMnesia.Adapter
-
-config :ecto_mnesia,
-  host: {:system, :atom, "MNESIA_HOST", Kernel.node()},
-  storage_type: {:system, :atom, "MNESIA_STORAGE_TYPE", :disc_copies}
-
-config :mnesia,
-  dir: 'priv/data/mnesia'
-
 # Configures the endpoint
 config :shorten_api, ShortenApiWeb.Endpoint,
   url: [host: "localhost"],
@@ -33,9 +22,19 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
-# Use Jason for JSON parsing in Phoenix
-config :phoenix, :json_library, Jason
+  # Configure your database
+config :shorten_api, ShortenApi.Repo,
+adapter: EctoMnesia.Adapter
 
+config :ecto_mnesia,
+host: {:system, :atom, "MNESIA_HOST", Kernel.node()},
+storage_type: {:system, :atom, "MNESIA_STORAGE_TYPE", :disc_copies}
+
+config :mnesia,
+dir: 'priv/data/mnesia'
+
+config :phoenix, :json_library, Jason
+config :ecto, :json_library, Jason
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"

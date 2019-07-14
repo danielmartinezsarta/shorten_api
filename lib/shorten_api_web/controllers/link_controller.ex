@@ -13,6 +13,11 @@ defmodule ShortenApiWeb.LinkController do
     redirect(conn, external: url)
   end
   
+  def get_and_redirect(conn, _params) do
+    url = "https://google.com/"
+    redirect(conn, external: url)
+  end
+
   def index(conn, _params) do
     links = Links.list_links()
     render(conn, "index.json", links: links)

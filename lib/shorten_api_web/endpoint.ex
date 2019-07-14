@@ -1,10 +1,10 @@
 defmodule ShortenApiWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :shorten_api
 
-  socket "/socket", ShortenApiWeb.UserSocket,
-    websocket: true,
-    longpoll: false
-
+  # socket "/socket", ShortenApiWeb.UserSocket,
+  #   websocket: true,
+  #   longpoll: false
+  socket "/socket", ShortenApiWeb.UserSocket
   # Serve at "/" the static files from "priv/static" directory.
   #
   # You should set gzip to true if you are running phx.digest
@@ -27,7 +27,8 @@ defmodule ShortenApiWeb.Endpoint do
   plug Plug.Parsers,
     parsers: [:urlencoded, :multipart, :json],
     pass: ["*/*"],
-    json_decoder: Phoenix.json_library()
+    json_decoder: Poison
+    #Phoenix.json_library()
 
   plug Plug.MethodOverride
   plug Plug.Head
