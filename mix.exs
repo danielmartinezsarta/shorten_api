@@ -33,16 +33,13 @@ defmodule ShortenApi.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
-      {:phoenix, "~> 1.4.9"},
-      {:phoenix_pubsub, "~> 1.1"},
-      {:phoenix_ecto, "~> 4.0"},
-      {:ecto_sql, "~> 3.1"},
-      {:postgrex, ">= 0.0.0"},
-      {:gettext, "~> 0.11"},
-      {:cowboy, "~> 2.6"},
-      {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"},
-      {:ecto_mnesia, "~> 0.9.1"}
+    {:phoenix, "~> 1.4.9"},
+    {:phoenix_pubsub, "~> 1.0"},
+    {:phoenix_ecto, "~> 3.2"},
+    {:postgrex, ">= 0.0.0"},
+    {:gettext, "~> 0.11"},
+    {:cowboy, "~> 1.0"},
+    {:ecto_mnesia, "~> 0.9.1"}
     ]
   end
 
