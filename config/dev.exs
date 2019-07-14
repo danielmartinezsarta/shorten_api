@@ -1,13 +1,13 @@
 use Mix.Config
 
 # Configure your database
-config :shorten_api, ShortenApi.Repo,
-  username: "postgres",
-  password: "postgres",
-  database: "shorten_api_dev",
-  hostname: "localhost",
-  show_sensitive_data_on_connection_error: true,
-  pool_size: 10
+# config :shorten_api, ShortenApi.Repo,
+#   username: "postgres",
+#   password: "postgres",
+#   database: "shorten_api_dev",
+#   hostname: "localhost",
+#   show_sensitive_data_on_connection_error: true,
+#   pool_size: 10
 
 # For development, we disable any cache and enable
 # debugging and code reloading.
