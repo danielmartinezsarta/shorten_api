@@ -6,6 +6,13 @@ defmodule ShortenApiWeb.LinkController do
 
   action_fallback ShortenApiWeb.FallbackController
 
+  def get_and_redirect(conn, %{"id" => id}) do
+    url = id
+      |> Links.get_link!()
+      |> Map.get(:url)
+    redirect(conn, external: url)
+  end
+  
   def index(conn, _params) do
     links = Links.list_links()
     render(conn, "index.json", links: links)
